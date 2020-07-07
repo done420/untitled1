@@ -1,0 +1,77 @@
+# # import os,cv2
+# #
+# #
+# #
+# # ############### 挑选和筛选有关的分类
+# # import xml.etree.ElementTree as ET
+# # import os
+# # import json
+# # select_cats = ['chandelier' ,  'checkerboard' ,  'chopstick' ,  'clock' ,  'coffee_table' ,
+# #                'dining_table' ,  'dresser' ,  'refrigerator' ,  'fan' ,  'file_cabinet' ,
+# #                'fireplace' ,  'footstool' ,  'hammock' ,  'kitchen_table' ,  'lantern' ,
+# #                'lightbulb' ,  'lightning_rod' ,  'mirror' ,  'recliner' ,  'runner_(carpet)' ,
+# #                'sofa' ,  'statue_(sculpture)' ,  'stool' ,  'stove' ,  'table_lamp' ,  'toilet' ,
+# #                'toilet_tissue' ,  'vase' ,  'wardrobe']
+# #
+# # filter_category_list = select_cats
+# #
+# # def xml_Object(xml_file):
+# #
+# # 	tree = ET.parse(xml_file)
+# # 	root = tree.getroot()
+# # 	d = {}
+# # 	for ele in root:
+# # 		if ele.tag == "filename":
+# # 			file_name =  ele.text
+# # 		# file_name = [ele.text if ele.tag =="filename" else ""]
+# # 		obj = [i.text for i in ele if i.tag=='name' if ele.tag =='object']
+# #
+# #
+# # 	d[file_name] = obj
+# #
+# # 	return d
+# #
+# #
+# # xml_path = "C:\\Users\\NING MEI\\PycharmProjects\\untitled\\1_detectron2\\"
+# #
+# # d = {}
+# # for file_name in os.listdir(xml_path):
+# # 	if file_name.endswith(".xml"):
+# # 		xml_file = os.path.join(xml_path,file_name)
+# # 		a = xml_Object(xml_file)
+# # 		d.update(a)
+# #
+# # print(d)
+# #
+# #
+# #
+# #
+# #
+# #
+# # test_xml = "C:/Users/NING MEI/PycharmProjects/untitled/1_detectron2/000000568137.xml"
+# # xml_Object(test_xml)
+#
+# a = ['布艺沙发', '皮质沙发', '沙发组合', '沙发床', 'Minooti Baxter', 'FLEXFORM poliform', '罗奇堡', 'B&B等品牌标签'
+# '单椅', '吧椅', '矮墩', '圆凳', '脚凳', '办公椅', '沙滩椅', '户外椅',
+# '吊灯', '壁灯', '水晶灯', '台灯', '落地灯', '吸顶灯', '筒灯', '射灯', '户外灯', '动物灯', '造型灯', '大师灯',
+# '单人床', '双人床', '床头柜', '儿童床', '圆床', '罗汉床', '布艺床',
+# '餐桌', '书桌', '茶几', '边几', '吧台', '梳妆台', '餐桌椅', '茶桌',
+# '玄关柜', '电视柜', '装饰柜', '书柜', '衣柜', '储物柜', '酒柜', '鞋柜', '展示柜', '隔断柜', '博古架',
+# '饰品摆件', '墙饰', '装饰镜', '茶具', '艺术品', '镜子', '花卉', '插花', '花瓶',
+# '橱柜', '台盆', '浴缸', '马桶', '淋浴构件', '卫浴柜', '餐具', '瓷砖', '搭配', '岩板', '台面',
+# '隔断', '屏风', '门', '窗', '楼梯', '柱子', '栏杆', '雕花', '石膏线',
+# '盆栽', '树木', '植物墙', '花艺']
+#
+# ade_label_file="F:\\ade\\ade_label_names.txt"
+# with open(ade_label_file,'r',encoding='utf-8') as f:
+# 	db = dict([line.strip().split("\t")[0],line.strip().split("\t")[-1]] for line in f.readlines())
+# 	n = 0
+# 	for k,v in db.items():
+# 		if v in a:
+# 			print("%s\t%s"%(k,v))
+# 			n+=1
+# 	print(n)
+#
+# print(len(a))
+#
+
